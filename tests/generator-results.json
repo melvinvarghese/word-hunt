@@ -1,0 +1,26 @@
+{
+  "generatorVersion": "1.0.0",
+  "levelsGenerated": 5000,
+  "levelsValidated": 5000,
+  "uniqueFingerprints": 5000,
+  "duplicateConfigurations": [],
+  "directionsObserved": 8,
+  "levelsWithCompatibleOverlaps": 2500,
+  "dailyPuzzlesValidated": 366,
+  "uniqueDailyPuzzles": 366,
+  "curatedVocabularyEntries": 1621,
+  "categories": 20,
+  "tiers": {
+    "Beginner": 40,
+    "Easy": 80,
+    "Medium": 280,
+    "Hard": 800,
+    "Expert": 3800
+  },
+  "maxPlacementAttemptsObserved": 2,
+  "fallbacksObserved": 0,
+  "generationValidationDeterminismMs": 1142,
+  "totalTestMs": 1187,
+  "runtime": "v24.22.1",
+  "platform": "linux"
+}

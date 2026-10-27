@@ -1,0 +1,1 @@
+PASS relative assets, JS syntax, no runtime network calls, browser-global script loading, QA fixture assets, and GitHub Pages marker.

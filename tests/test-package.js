@@ -1,0 +1,7 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),vm=require('node:vm');const root=path.resolve(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');const references=[...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(m=>m[1]);assert.ok(references.length===7);for(const ref of references){assert.ok(ref.startsWith('./'),'Relative assets only: '+ref);assert.ok(fs.existsSync(path.join(root,ref)),'Missing '+ref);}
+for(const file of ['word-bank.js','puzzle-generator.js','validator.js','core.js','game.js']){const text=fs.readFileSync(path.join(root,file),'utf8');new vm.Script(text,{filename:file});assert.ok(!/\b(?:fetch|XMLHttpRequest|WebSocket)\s*\(/.test(text),'No runtime network calls');}
+const sandbox={};vm.createContext(sandbox);for(const file of ['word-bank.js','puzzle-generator.js','validator.js','core.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),sandbox,{filename:file});assert.ok(sandbox.PuzzleValidator.validate(sandbox.PuzzleGenerator.generateLevel(5000)).valid);assert.equal(sandbox.WordHuntCore.defaults().coins,25);
+const fixture=fs.readFileSync(path.join(__dirname,'fixture.html'),'utf8');for(const ref of [...fixture.matchAll(/(?:src|href)="([^"]+)"/g)].map(m=>m[1]))assert.ok(fs.existsSync(path.resolve(__dirname,ref)),ref);
+assert.ok(fs.existsSync(path.join(root,'.nojekyll')));console.log('PASS relative assets, JS syntax, no runtime network calls, browser-global script loading, QA fixture assets, and GitHub Pages marker.');
