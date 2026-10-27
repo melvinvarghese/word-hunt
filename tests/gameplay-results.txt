@@ -1,0 +1,15 @@
+PASS Forward, reverse, exact match, duplicate rejection
+PASS Substring, malformed and bent selections rejected
+PASS All eight straight directions
+PASS Overlapping words retain separate paths
+PASS Incomplete puzzle cannot claim rewards
+PASS First reward, stars, progression and no replay farming
+PASS Hints cost coins, preserve unsolved words and lower score
+PASS Daily determinism, date rollover and no repeated reward
+PASS Streaks handle consecutive days, missed days, years and leap days
+PASS Local date uses local calendar fields
+PASS Save round trip and separate campaign/daily sessions
+PASS Missing, corrupt, incompatible and unavailable storage
+PASS Invalid save fields and settings safely normalized
+PASS Final level stays within collection bounds
+14 gameplay/state test groups passed.
