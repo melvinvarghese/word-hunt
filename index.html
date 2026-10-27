@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090B10"><meta name="description" content="A little focus. A new discovery. Find your flow with 5,000 word search puzzles and a fresh daily challenge.">
+<title>WORD HUNT — Find your focus</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
+<script defer src="./word-bank.js"></script><script defer src="./puzzle-generator.js"></script><script defer src="./validator.js"></script><script defer src="./core.js"></script><script defer src="./game.js"></script>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<header class="site-header"><button class="brand" data-action="home" aria-label="Word Hunt home"><span class="brand-icon" aria-hidden="true">W<span>H</span></span><span>WORD HUNT<span class="brand-caption">A LITTLE FOCUS. A NEW DISCOVERY.</span></span></button><nav aria-label="Main navigation"><button data-action="browse">Puzzles <span class="nav-count">5,000</span></button><button data-action="settings" class="icon-button" aria-label="Open settings">⚙</button></nav></header>
+<main id="app" tabindex="-1"></main>
+<footer><span>MADE FOR A MOMENT OF CLARITY</span><span>5,000 puzzles. Endless little victories.</span></footer>
+<div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div><div id="toast" role="status" hidden></div>
+<dialog id="settings" aria-labelledby="settings-title"><div class="dialog-top"><span class="eyebrow">MAKE IT YOURS</span><button class="icon-button" data-action="close-settings" aria-label="Close settings">✕</button></div><h2 id="settings-title">Your quiet corner.</h2><label class="setting">Show timer<input type="checkbox" id="timer-setting" role="switch"></label><label class="setting">Reduce motion<input type="checkbox" id="motion-setting" role="switch"></label><div class="instructions"><h3>How to hunt</h3><p>Drag from the first letter to the last. Words run in eight directions, including backwards. Select the complete word; overlaps are welcome.</p><p><strong>Keyboard:</strong> Tab into the grid. Arrow keys move. Enter or Space starts a selection; arrows extend it; Enter or Space submits. Escape cancels.</p><p><strong>Hints:</strong> a letter costs 1 coin; a start location costs 3. Hints never finish a word. You start with 25 coins. First completions earn 20, plus 10 without hints. Daily puzzles add 30 and a streak bonus of 2–14 coins. Replays earn no extra coins.</p><p>Your progress stays in this browser. No account, payments, or tracking. Sound is not used.</p></div><div class="dialog-bottom"><span>WORD HUNT · v1.0.0</span><button class="danger" data-action="reset">Reset progress</button></div></dialog>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><span class="eyebrow">START FRESH</span><h2 id="reset-title">Reset all progress?</h2><p>This clears completed puzzles, daily history, coins, and saved games in this browser. It cannot be undone.</p><div class="actions"><button data-action="cancel-reset">Keep my progress</button><button class="danger" data-action="confirm-reset">Yes, reset everything</button></div></dialog>
+<dialog id="pause-dialog" aria-labelledby="pause-title"><span class="eyebrow">TAKE A BREATHER</span><h2 id="pause-title">Your puzzle can wait.</h2><p>The timer is paused. Come back when you’re ready.</p><div class="actions"><button class="primary" data-action="resume">Back to the hunt →</button><button data-action="home">Home</button></div></dialog>
+<noscript><p class="noscript">Please enable JavaScript to play WORD HUNT. Everything runs locally in your browser.</p></noscript>
+</body></html>
